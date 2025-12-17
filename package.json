@@ -1,7 +1,7 @@
 {
   "name": "@hoge1e3/url",
   "description": "The core `url` packaged standalone for use with Browserify( added pathToFileURL ).",
-  "version": "0.11.4",
+  "version": "1.6.3",
   "author": "defunctzombie",
   "dependencies": {
     "punycode": "^2.3.1",
@@ -25,11 +25,14 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "tests-only": "nyc mocha",
-    "test": "npm run tests-only",
+    "tests-only": "npx mocha",
+    "test": "nyc mocha",
     "posttest": "aud --production",
     "zuul": "zuul -- test/index.js",
-    "test-local": "zuul --local -- test/index.js"
+    "test-local": "zuul --local -- test/index.js",
+    "tsc": "echo no-tsc-needed",
+    "webpack": "echo no-webpack-needed",
+    "webpack-dev": "echo no-webpack-needed"
   },
   "repository": {
     "type": "git",

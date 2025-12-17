@@ -25,7 +25,7 @@
 
 var test = require('mocha').test;
 var assert = require('assert');
-var nodeURL = require('url');
+var nodeURL = require('node:url');
 
 var url = require('../url');
 
