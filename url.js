@@ -767,7 +767,27 @@ Url.prototype.parseHost = function () {
   }
   if (host) { this.hostname = host; }
 };
-
+function pathToFileURL(path){
+  const abs=(abspath)=>{
+    if (abspath.match(/^\w:/)) {
+      return `file:///${abspath}`;
+    } else if(abspath.startsWith("/")) {
+      return `file://${abspath}`;
+    } else {
+      throw new Error("cannot convert "+abspath);
+    }
+  };
+  if (!polyfill) {
+    return urlParse(abs(path));
+  }
+  const p=polyfill.path;
+  return urlParse(abs(p.resolve(p)));
+}
+let polyfill=null;
+exports.setPolyfill = (_p)=>{
+  polyfill=_p;
+}
+exports.pathToFileURL=pathToFileURL;
 exports.parse = urlParse;
 exports.resolve = urlResolve;
 exports.resolveObject = urlResolveObject;
