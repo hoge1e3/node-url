@@ -1,7 +1,7 @@
 {
   "name": "@hoge1e3/url",
   "description": "The core `url` packaged standalone for use with Browserify( added pathToFileURL ).",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "author": "defunctzombie",
   "dependencies": {
     "punycode": "^2.3.1",
